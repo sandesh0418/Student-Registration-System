@@ -9,16 +9,18 @@
 <html>
   <head>
     <title>$Title$</title>
+      <link rel="stylesheet" href="resources/bootstrap.min.css"/>
+      <link rel="stylesheet" href="others/landing.css"/>
+
   </head>
   <body>
-<div style="border: 1px solid #86bae8;
-    margin: 15%;
-    text-align: center;
-    padding: 40px;">
+  <div id="top">
 
-    <a style="text-align: center" href = "login.jsp"><button>Log In</button></a></br></br>
-    <a style="text-align: center" href = "registration.jsp"><button>Register</button></a>
 
-</div>
+    <a style="text-align: center" href = "login.jsp"><button class="btn btn-primary">Log In</button></a></br></br>
+    <a style="text-align: center" href = "registration.jsp"><button class="btn btn-primary">Register</button></a>
+
+
+  </div>
   </body>
 </html>

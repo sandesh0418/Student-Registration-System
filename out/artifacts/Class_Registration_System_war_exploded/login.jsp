@@ -7,17 +7,21 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<div style="border: 1px solid #86bae8;
-    margin: 15%;
-    text-align: center;
-    padding: 40px;">
-<form action="LogIn" method="post">
-    <label htmlfor="CWID">CWID</label>
-<input type = "number" name = "CWID" required/>
-</br></br>
-    <label htmlfor="password">Password</label>
-<input type = "password" name = "password" required/>
-    </br></br>
-<button type ="submit">Log In</button>
-</form>
+<link rel="stylesheet" href="resources/bootstrap.min.css"/>
+<link rel="stylesheet" href="others/login.css" />
+
+<div id="main" class="container">
+    <form action="LogIn" method="post">
+        <div class="form-group">
+            <label>CWID</label>
+            <input type="number" name ="CWID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter CWID" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your cwid with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name ="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
 </div>
