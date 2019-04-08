@@ -1,5 +1,7 @@
 package com.java.sandesh.servlets;
 
+import com.java.sandesh.servlets.Database.AuthClass;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,21 +9,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet(name = "Servlet")
 public class LogIn extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int cwid = Integer.parseInt(request.getParameter("CWID"));
         String password = request.getParameter("password");
-
+        boolean status = false;
+        try {
+            status = AuthClass.LogInValidation(cwid,password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE html>");
         out.println("<html>");
-        if(cwid == 123){
-        out.println("<h1>"+cwid+ password+"</h1");}
+        if(status){
+        out.println("<h1> Welcome"+cwid+"</h1");}
         else{
-            out.println("<h1> Incorrect Password </h1>");
+            out.println("<h1> Incorrect Username or Password </h1>");
             request.getRequestDispatcher("login.jsp").include(request,response);
         }
         out.println("</html>");

@@ -15,7 +15,7 @@
     margin: 15%;
     text-align: center;
     padding: 40px;">
-    <form method ="Register" action="post">
+    <form method ="Post" action="Register">
         <label>CWID</label>
         <input type="number" name="cwid" required/></br></br>
         <label>First Name</label>
